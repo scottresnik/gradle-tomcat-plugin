@@ -128,9 +128,9 @@ class TomcatJasperFunctionalTest extends AbstractFunctionalTest {
         expect:
         File outputDir = temporaryFolder.newFolder('build', 'jasper')
         buildFile << getBasicTomcatBuildFileContent(tomcatVersion)
-        assertTaskOutcome(build(TomcatPlugin.TOMCAT_JASPER_TASK_NAME), TomcatPlugin.TOMCAT_JASPER_TASK_NAME, TaskOutcome.SUCCESS)
+        assertTaskOutcome(build(TomcatPlugin.TOMCAT_JASPER_TASK_NAME), ':tomcatJasper', TaskOutcome.SUCCESS)
         assertCompiledJsps(outputDir)
-        assertTaskOutcome(build(TomcatPlugin.TOMCAT_JASPER_TASK_NAME), TomcatPlugin.TOMCAT_JASPER_TASK_NAME, TaskOutcome.UP_TO_DATE)
+        assertTaskOutcome(build(TomcatPlugin.TOMCAT_JASPER_TASK_NAME), ':tomcatJasper', TaskOutcome.UP_TO_DATE)
 
 
         where:
